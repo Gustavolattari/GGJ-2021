@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Dang/MenuScene/MainMenu.unity
+    guid: 7902abd80c66a824190794f4f7dfee69
+  - enabled: 1
+    path: Assets/Tim/Scene/Test_Scene.unity
+    guid: cb2bf89fb4d53f043b821f905fdb57da
   m_configObjects: {}
