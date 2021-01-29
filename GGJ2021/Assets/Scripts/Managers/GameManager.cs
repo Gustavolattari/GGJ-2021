@@ -28,6 +28,11 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(level);
     }
 
+    public void ChangeLevel(string level)
+    {
+        SceneManager.LoadScene(level);
+    }
+
     public void GameOver()
     {
         isGameOver = true;
