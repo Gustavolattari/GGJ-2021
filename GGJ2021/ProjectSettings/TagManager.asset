@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Animal
   layers:
   - Default
   - TransparentFX
@@ -40,4 +41,25 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sea level
+    uniqueID: 2415314811
+    locked: 0
+  - name: Ground level 1
+    uniqueID: 381083331
+    locked: 0
+  - name: Ground Level 2
+    uniqueID: 2353141765
+    locked: 0
+  - name: Ground Level 3
+    uniqueID: 3020395173
+    locked: 0
+  - name: Ground Level 4
+    uniqueID: 875703977
+    locked: 0
+  - name: Ground Level 5
+    uniqueID: 3348100971
+    locked: 0
+  - name: Tree & Bushes
+    uniqueID: 1943661199
     locked: 0
