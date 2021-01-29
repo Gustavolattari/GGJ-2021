@@ -341,16 +341,20 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1643277182980563534, guid: a178371fd936fec4faaeab18fea988f0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1643277182980563534, guid: a178371fd936fec4faaeab18fea988f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1643277182980563534, guid: a178371fd936fec4faaeab18fea988f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1643277182980563534, guid: a178371fd936fec4faaeab18fea988f0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1643277182980563534, guid: a178371fd936fec4faaeab18fea988f0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -382,7 +386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5906658225738783067, guid: a178371fd936fec4faaeab18fea988f0, type: 3}
       propertyPath: m_Name
-      value: Test Cube
+      value: Cube Test
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a178371fd936fec4faaeab18fea988f0, type: 3}
