@@ -14,6 +14,7 @@ public class Timer : MonoBehaviour
     {
 
         remainingTime = totalTime;
+        StartTimer();
     }
 
     public void StartTimer()
@@ -29,25 +30,26 @@ public class Timer : MonoBehaviour
     public string ConvertTime(float seconds)
     {
         string timeString;
-        var ts = System.TimeSpan.FromSeconds(seconds);
-        timeString = $"{ts.Minutes}:{ts.Seconds}";
+        //var ts = System.TimeSpan.FromSeconds(seconds);
+        //timeString = $"{ts.Minutes}:{ts.TotalSeconds}";
+
+        timeString = string.Format("{0:0}:{1:00}", Mathf.Floor(seconds / 60), seconds % 60);
 
         return timeString;
     }
 
     IEnumerator CountDown()
     {
-        while (remainingTime > 0)
+        while (remainingTime > 0 && !GameManager.instance.isGameOver)
         {
-            if(remainingTime <= 0)
+            yield return new WaitForSeconds(1);
+            remainingTime--;
+            if (remainingTime <= 0)
             {
                 GameManager.instance.GameOver();
                 StopTimer();
             }
-            yield return new WaitForSeconds(1);
-            remainingTime--;
-
-            ConvertTime(remainingTime);
+            Debug.Log(ConvertTime(remainingTime));
         }
     }
 }
