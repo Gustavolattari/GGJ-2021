@@ -9,11 +9,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Environment
+  - Animal
   - 
   - 
   - 
@@ -62,4 +62,7 @@ TagManager:
     locked: 0
   - name: Tree & Bushes
     uniqueID: 1943661199
+    locked: 0
+  - name: Player
+    uniqueID: 2344679257
     locked: 0

@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+    private PlayerController playerController;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerController = GetComponent<PlayerController>();
+        if (playerController == null)
+            Debug.LogError("The InputManager did not find the PLayerController!");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+            CaptureAnimal();
+    }
+
+    void CaptureAnimal()
+    {
+        if(playerController.animalCount > 0)
+        {
+            int random = Random.Range(0, playerController.animalCount - 1);
+            playerController.RemoveAnimal(random);
+        }
     }
 }
