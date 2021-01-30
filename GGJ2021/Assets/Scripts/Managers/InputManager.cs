@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     private PlayerController playerController;
+    LevelManager levelManager;
 
     // Start is called before the first frame update
     void Start()
@@ -12,6 +13,10 @@ public class InputManager : MonoBehaviour
         playerController = GetComponent<PlayerController>();
         if (playerController == null)
             Debug.LogError("The InputManager did not find the PLayerController!");
+
+        levelManager = GameObject.Find("Level Manager").GetComponent<LevelManager>();
+        if (levelManager == null)
+            Debug.LogError("The InputManager did not find the LevelManager!");
     }
 
     // Update is called once per frame
@@ -27,6 +32,7 @@ public class InputManager : MonoBehaviour
         {
             int random = Random.Range(0, playerController.animalCount - 1);
             playerController.RemoveAnimal(random);
+            levelManager.UpdateScore($"Score: {playerController.score}");
         }
     }
 }
