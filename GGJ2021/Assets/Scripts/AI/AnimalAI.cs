@@ -14,10 +14,17 @@ public class AnimalAI : MonoBehaviour
     GameObject hidingPlace;
 
     bool isHiden = false;
+    public bool playerInRange = false;
+    public GameObject playerRef;
 
+    //Run Variables
+    float runTime = 3.0f;//run for 3 seconds
+    float maxRunTime;
+    bool shouldRun = false;
 
     private void Awake()
     {
+        maxRunTime = runTime;
         level = FindObjectOfType<LevelManager>();
         if (!level)
             Debug.LogError("No level manager found by animal AI");
@@ -35,6 +42,32 @@ public class AnimalAI : MonoBehaviour
         {
             Vector3 targ = hidingPlace.transform.position - transform.position;
             transform.Translate(targ.normalized * Time.deltaTime * moveSpeed);
+        }
+        else if (playerInRange)
+        {
+            shouldRun = true;
+            //Run from player
+
+            //Avoid terrain
+
+            //Avoid clumping with other animals
+
+            //Avoid going off the level
+        }
+        if (shouldRun)
+        {
+             if (runTime > 0)
+            {
+                Vector3 runDir = transform.position - playerRef.transform.position;
+                runDir = new Vector3(runDir.x, 0, runDir.z);
+                transform.Translate(runDir.normalized * Time.deltaTime * moveSpeed);
+                runTime -= Time.deltaTime;
+            }
+            else
+            {
+                shouldRun = false;
+                runTime = maxRunTime;
+            }//if run time ended
         }
     }
 

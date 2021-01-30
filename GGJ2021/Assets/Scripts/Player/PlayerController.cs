@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float moveSpeed;
     
-    private  List<GameObject> animals = new List<GameObject>();
+    [HideInInspector]
+    public  List<GameObject> animals = new List<GameObject>();
     [HideInInspector]
     public int animalCount { get { return animals.Count; } }
 
@@ -47,6 +48,10 @@ public class PlayerController : MonoBehaviour
         {
             Move(Vector3.back);
         }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            RemoveAnimal(0);
+        }
     }
 
     void Move(Vector3 dir)
@@ -55,24 +60,12 @@ public class PlayerController : MonoBehaviour
         //transform.LookAt(Camera.main.transform.position, Vector3.up);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == "Animal")
-        {
-            animals.Add(other.gameObject);
-        }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if(other.tag == "Animal")
-        {
-            animals.Remove(other.gameObject);
-        }
-    }
 
     public void RemoveAnimal(int index)
     {
+        if (animals.Count <= 0 || !animals[index])
+            return;
         AnimalAI critter = animals[index].GetComponent<AnimalAI>();
         if(critter != null)
         {
