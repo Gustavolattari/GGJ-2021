@@ -1,13 +1,7 @@
 fileFormatVersion: 2
-guid: 475427a5978fcc04589dc0cd707abd6e
+guid: f257108777e6e2347ba5de215e146d2e
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 1298615752284460875
-    second: Gary_0
-  - first:
-      213: 1350005096280854920
-    second: Gary_1
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -95,49 +89,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Gary_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1272
-        width: 3024
-        height: 2760
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b4754a6752c950210800000000000000
-      internalID: 1298615752284460875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gary_1
-      rect:
-        serializedVersion: 2
-        x: 624
-        y: 0
-        width: 1556
-        height: 1272
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 88199c08b7e2cb210800000000000000
-      internalID: 1350005096280854920
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
