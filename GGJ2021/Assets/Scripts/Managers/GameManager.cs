@@ -7,20 +7,27 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public bool isGameOver = true;
+    LevelManager levelManager;
+    Timer time;
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(instance);
         }
             
         else if (instance != null)
         {
             Destroy(gameObject);
         }
+
+        time = GetComponent<Timer>();
+        if (time == null)
+            Debug.LogError("The Game_Manager did not find the Timer!");
+        levelManager = GameObject.Find("Level Manager").GetComponent<LevelManager>();
+        if (levelManager == null)
+            Debug.LogError("The Game_Manager did not find the Level Manager!");
     }
 
     public void ChangeLevel (int level)
@@ -33,9 +40,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(level);
     }
 
+    public void RestartScene()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        time.StartTimer();
+    }
+
     public void GameOver()
     {
-        isGameOver = true;
-        ChangeLevel(0);
+        levelManager.ToggleLevelButtons();
     }
 }
