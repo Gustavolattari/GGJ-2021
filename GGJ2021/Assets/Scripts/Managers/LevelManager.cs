@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField]
+    private Text scoreText, timeText, endScoreText;
+    [SerializeField]
+    private GameObject endGameInfo;
+
     List<GameObject> hidingPlaces;
     List<GameObject> usedHidingPlaces;
 
@@ -16,17 +22,17 @@ public class LevelManager : MonoBehaviour
         {
             hidingPlaces.Add(arr[i].gameObject);
         }
+
+        endGameInfo = GameObject.Find("End_Game_Info").gameObject;
     }
     // Start is called before the first frame update
     void Start()
     {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        scoreText.text = "Score: 0"; 
         
+        
+        endGameInfo.SetActive(false);
+        Debug.Log(endGameInfo);
     }
 
     public GameObject GetHidingPlace()
@@ -37,4 +43,24 @@ public class LevelManager : MonoBehaviour
         hidingPlaces.RemoveAt(rand);
         return reference;
     }//returns a random hiding place
+
+    public void UpdateTime(string _time)
+    {
+        timeText.text = _time;
+    }
+
+    public void UpdateScore(string _score)
+    {
+        scoreText.text = _score;
+    }
+
+    public void UpdateEndLevelScores(string text)
+    {
+        endScoreText.text = text;
+    }
+
+    public void ToggleEndGameInfo()
+    {
+        endGameInfo.SetActive(!endGameInfo.activeSelf);
+    }
 }

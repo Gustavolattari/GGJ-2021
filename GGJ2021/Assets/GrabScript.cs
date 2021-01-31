@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GrabScript : MonoBehaviour
 {
+    public GameObject bubble;
+
     PlayerController controller;
     private void OnTriggerEnter(Collider other)
     {
@@ -34,6 +36,9 @@ public class GrabScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (controller.animalCount > 0)
+            bubble.SetActive(true);
+        else
+            bubble.SetActive(false);
     }
 }
