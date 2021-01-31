@@ -7,18 +7,22 @@ public class Timer : MonoBehaviour
     [HideInInspector]
     public int remainingTime;
 
-    [SerializeField]
-    private int totalTime;
+    public int totalTime;
+
+    LevelManager levelManager;
 
     private void Start()
     {
+        levelManager = GameObject.Find("Level Manager").GetComponent<LevelManager>();
+        if (levelManager == null)
+            Debug.LogError("The Timer did not find the LevelManager!");
 
-        remainingTime = totalTime;
         StartTimer();
     }
 
     public void StartTimer()
     {
+        remainingTime = totalTime;
         StartCoroutine("CountDown");
     }
 
@@ -30,8 +34,6 @@ public class Timer : MonoBehaviour
     public string ConvertTime(float seconds)
     {
         string timeString;
-        //var ts = System.TimeSpan.FromSeconds(seconds);
-        //timeString = $"{ts.Minutes}:{ts.TotalSeconds}";
 
         timeString = string.Format("{0:0}:{1:00}", Mathf.Floor(seconds / 60), seconds % 60);
 
@@ -40,7 +42,7 @@ public class Timer : MonoBehaviour
 
     IEnumerator CountDown()
     {
-        while (remainingTime > 0 && !GameManager.instance.isGameOver)
+        while (remainingTime > 0 )
         {
             yield return new WaitForSeconds(1);
             remainingTime--;
@@ -49,7 +51,7 @@ public class Timer : MonoBehaviour
                 GameManager.instance.GameOver();
                 StopTimer();
             }
-            Debug.Log(ConvertTime(remainingTime));
+            levelManager.UpdateTime($"Time: {ConvertTime(remainingTime)}");
         }
     }
 }
