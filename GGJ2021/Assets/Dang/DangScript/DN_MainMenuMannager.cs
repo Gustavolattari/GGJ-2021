@@ -21,6 +21,7 @@ public class DN_MainMenuMannager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         StartAnimator = StartUI.GetComponent<Animator>();
         HTPAnimator = HTPUI.GetComponent<Animator>();
         CreditAnimator = CreditUI.GetComponent<Animator>();
