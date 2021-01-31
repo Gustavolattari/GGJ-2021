@@ -29331,7 +29331,15 @@ MonoBehaviour:
   PaperFlip: {fileID: 1910172905}
   EndScreen: {fileID: 841457283}
   PauseNow: 0
-  ButtonGroup: []
+  ButtonGroup:
+  - {fileID: 901390607}
+  - {fileID: 2048027820}
+  - {fileID: 1972864237}
+  - {fileID: 136810911}
+  - {fileID: 1592847804}
+  - {fileID: 660262349}
+  - {fileID: 1125969590}
+  - {fileID: 2009769879}
 --- !u!224 &1080920060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30586,7 +30594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1125969591
 RectTransform:
   m_ObjectHideFlags: 0
@@ -54693,7 +54701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2009769880
 RectTransform:
   m_ObjectHideFlags: 0

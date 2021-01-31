@@ -107,7 +107,10 @@ public class DN_InGameUI : MonoBehaviour
     }
     public void Freeze()
     {
-        
+        for (int i = 0; i < ButtonGroup.Length; i++)
+        {
+            ButtonGroup[i].SetActive(true);
+        }
         HTPAnimator.SetBool("Out", false);
         StartAnimator.SetBool("Out", false);
         CreditAnimator.SetBool("Out", false);
@@ -117,6 +120,10 @@ public class DN_InGameUI : MonoBehaviour
     }
     public void Resume()
     {
+        for (int i = 0; i < ButtonGroup.Length; i++)
+        {
+            ButtonGroup[i].SetActive(false);
+        }
         Time.timeScale = 1;
         HTPAnimator.SetBool("Out", true);
         StartAnimator.SetBool("Out", true);
