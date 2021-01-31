@@ -18,6 +18,9 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> animals;
     Timer timer;
 
+    [SerializeField]
+    Text creatureAmount;
+
     PlayerController playerController;
 
     private void Awake()
@@ -54,7 +57,7 @@ public class LevelManager : MonoBehaviour
 
     private void Update()
     {
-        
+        creatureAmount.text = "Animals Remaining: " + animals.Count;
     }
 
     public GameObject GetHidingPlace()
