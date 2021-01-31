@@ -6,17 +6,15 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
-    private Text scoreText, timeText;
+    private Text scoreText, timeText, endScoreText;
     [SerializeField]
-    private GameObject levelButtons;
+    private GameObject endGameInfo;
 
     List<GameObject> hidingPlaces;
     List<GameObject> usedHidingPlaces;
 
     private void Awake()
     {
-
-
         hidingPlaces = new List<GameObject>();
         usedHidingPlaces = new List<GameObject>();
         HidingPlace[] arr = GameObject.FindObjectsOfType<HidingPlace>();
@@ -24,11 +22,17 @@ public class LevelManager : MonoBehaviour
         {
             hidingPlaces.Add(arr[i].gameObject);
         }
+
+        endGameInfo = GameObject.Find("End_Game_Info").gameObject;
     }
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Score: 0";
+        scoreText.text = "Score: 0"; 
+        
+        
+        endGameInfo.SetActive(false);
+        Debug.Log(endGameInfo);
     }
 
     public GameObject GetHidingPlace()
@@ -50,8 +54,13 @@ public class LevelManager : MonoBehaviour
         scoreText.text = _score;
     }
 
-    public void ToggleLevelButtons()
+    public void UpdateEndLevelScores(string text)
     {
-        levelButtons.SetActive(!levelButtons.activeSelf);
+        endScoreText.text = text;
+    }
+
+    public void ToggleEndGameInfo()
+    {
+        endGameInfo.SetActive(!endGameInfo.activeSelf);
     }
 }

@@ -48,10 +48,10 @@ public class PlayerController : MonoBehaviour
         {
             Move(Vector3.back);
         }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            RemoveAnimal(0);
-        }
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    RemoveAnimal(0);
+        //}
     }
 
     void Move(Vector3 dir)
