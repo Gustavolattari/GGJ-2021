@@ -944,7 +944,8 @@ RectTransform:
   m_LocalRotation: {x: 0.0015558237, y: 0.0031837875, z: -0.7013573, w: -0.71280116}
   m_LocalPosition: {x: 0, y: 0, z: -0.2}
   m_LocalScale: {x: 0.4597673, y: 0.33085993, z: 0.18509646}
-  m_Children: []
+  m_Children:
+  - {fileID: 2127463675}
   m_Father: {fileID: 1970228503}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0.129, y: -0.385, z: 89.072}
@@ -1657,7 +1658,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -24.057}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -50.3, y: 19.7}
+  m_AnchoredPosition: {x: -55.2, y: 19.8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &678176248
@@ -1844,7 +1845,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creature catcher
+  m_Text: 'Gary
+
+    the Rescuer'
 --- !u!222 &682106305
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2180,7 +2183,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Credit
+  m_Text: Credits
 --- !u!222 &825929494
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3378,7 +3381,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1483116761}
   m_LocalRotation: {x: -0.003178031, y: 0.0015675516, z: -0.71021056, w: 0.70398045}
-  m_LocalPosition: {x: 0, y: 0, z: 0.8176}
+  m_LocalPosition: {x: 0, y: 0, z: 0.8}
   m_LocalScale: {x: 0.17828275, y: 0.1782827, z: 0.17828274}
   m_Children: []
   m_Father: {fileID: 411452935}
@@ -3386,7 +3389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -0.129, y: 0.385, z: -90.505}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.138568, y: -51.319817}
+  m_AnchoredPosition: {x: -7, y: -51.3}
   m_SizeDelta: {x: 950.0437, y: 550.13696}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483116763
@@ -3411,10 +3414,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4506bf6ca285b494ab0993e12703d5e6, type: 3}
-    m_FontSize: 39
+    m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -3425,18 +3428,28 @@ MonoBehaviour:
   m_Text: 'Programmer: Timothy Janssen & Gustavo Lattari
 
 
-    Level designer: Elliott
-    Battle
+    Level Designer: Gustavo
+    Lattari & Elliott Battle
 
 
-    Artist: Matthew Jones
+    Character Artist: Matthew Jones
 
 
-    audio composer: Michael Schiciano
+    Level Artist:
+    Keith at Fertile Soil Productions
+
+    Asset Pack from https://fertile-soil-productions.itch.io/modular-terrain-pack
 
 
-    UI
-    Designer: Dang Nguyen
+    Audio
+    Composer: Michael Schiciano
+
+
+    UI Designer: Dang Nguyen
+
+
+    In Memory of
+    Lucy the Ferret
 
 '
 --- !u!222 &1483116764
@@ -4096,8 +4109,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: These creature will run and hide, try to catch them using the space bar
-    before the timer run out.
+  m_Text: Gary's rescue animals escaped into the forest! He needs to get them back
+    to the shelter! Use the space bar to rescue!
 --- !u!222 &1929380517
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4396,6 +4409,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975261420}
+  m_CullTransparentMesh: 1
+--- !u!1 &2127463674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2127463675}
+  - component: {fileID: 2127463677}
+  - component: {fileID: 2127463676}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2127463675
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127463674}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 0.381956, y: 0.381956, z: 0.381956}
+  m_Children: []
+  m_Father: {fileID: 405024067}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.2, y: 3.1}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2127463676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127463674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 4506bf6ca285b494ab0993e12703d5e6, type: 3}
+    m_FontSize: 28
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: Rescue
+--- !u!222 &2127463677
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127463674}
   m_CullTransparentMesh: 1
 --- !u!1 &2139327812
 GameObject:

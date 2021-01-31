@@ -42,7 +42,7 @@ public class AnimalAI : MonoBehaviour
         if (!isHiden)
         {
             Vector3 targ =  hidingPlace.transform.position - transform.position;
-            transform.Translate(targ.normalized * Time.deltaTime * moveSpeed);
+            transform.Translate(targ.normalized * Time.deltaTime * moveSpeed, Space.World);
         }
         else if (playerInRange)
         {

@@ -36,6 +36,7 @@ public class InputManager : MonoBehaviour
             levelManager.UpdateScore($"Score: {playerController.score}");
             if (levelManager.animals.Count == 0)
                 levelManager.GameOver();
+            playerController.GrabSound();
 
         }
     }
