@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
     void Move(Vector3 dir)
     {
         Run();
-        rb.velocity = dir.normalized * Time.deltaTime * moveSpeed;   
+        rb.velocity = dir.normalized * moveSpeed;   
     }
 
 
