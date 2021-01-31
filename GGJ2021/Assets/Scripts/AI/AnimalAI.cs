@@ -13,14 +13,15 @@ public class AnimalAI : MonoBehaviour
     LevelManager level;
     GameObject hidingPlace;
 
-    bool isHiden = false;
+    [SerializeField]
+    public bool isHiden = false;
     public bool playerInRange = false;
     public GameObject playerRef;
 
     //Run Variables
     float runTime = 3.0f;//run for 3 seconds
     float maxRunTime;
-    bool shouldRun = false;
+    public bool shouldRun = false;
 
     private void Awake()
     {
@@ -40,7 +41,7 @@ public class AnimalAI : MonoBehaviour
     {
         if (!isHiden)
         {
-            Vector3 targ = hidingPlace.transform.position - transform.position;
+            Vector3 targ =  hidingPlace.transform.position - transform.position;
             transform.Translate(targ.normalized * Time.deltaTime * moveSpeed);
         }
         else if (playerInRange)
@@ -60,6 +61,7 @@ public class AnimalAI : MonoBehaviour
             {
                 Vector3 runDir = transform.position - playerRef.transform.position;
                 runDir = new Vector3(runDir.x, 0, runDir.z);
+                Debug.Log(runDir.normalized);
                 transform.Translate(runDir.normalized * Time.deltaTime * moveSpeed);
                 runTime -= Time.deltaTime;
             }

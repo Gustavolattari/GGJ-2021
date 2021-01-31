@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 1203220413712325465}
   - component: {fileID: 1203220413712325470}
   - component: {fileID: 1203220413712325471}
+  - component: {fileID: 191632535}
   m_Layer: 0
   m_Name: Panda
   m_TagString: Animal
@@ -157,9 +158,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92b744b50aa4294ba5f32590bece83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 45
+  isHiden: 0
   playerInRange: 0
   playerRef: {fileID: 0}
+  shouldRun: 0
 --- !u!54 &1203220413712325470
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -189,3 +192,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 28.842773, y: 33, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &191632535
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203220413712325468}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

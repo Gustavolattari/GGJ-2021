@@ -14,9 +14,16 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public int animalCount { get { return animals.Count; } }
 
+    private Animator anim;
+    private AudioSource audiosource;
+    Rigidbody rb;
+
     private void Awake()
     {
         tag = "Player";
+        anim = GetComponent<Animator>();
+        audiosource = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody>();
     }
     // Start is called before the first frame update
     void Start()
@@ -32,32 +39,66 @@ public class PlayerController : MonoBehaviour
 
     void HandleInput()
     {
+        bool moved = false;
+        Vector3 moveDir = Vector3.zero;
         if (Input.GetKey(KeyCode.A))
         {
-            Move(Vector3.left);
+            //Move(Vector3.left);
+            moveDir += Vector3.left;
+            this.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, 180, transform.rotation.z));
+            moved = true;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            Move(Vector3.right);
+            //Move(Vector3.right);
+            moveDir += Vector3.right;
+            this.transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, 0, transform.rotation.z));
+            moved = true;
         }
         if (Input.GetKey(KeyCode.W))
         {
-            Move(Vector3.forward);
+            //Move(Vector3.forward);
+            moveDir += Vector3.forward;
+            moved = true;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            Move(Vector3.back);
+            //Move(Vector3.back);
+            moveDir += Vector3.back;
+            moved = true;
         }
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    RemoveAnimal(0);
-        //}
+        Move(moveDir);
+        if (!moved)
+        {
+            Stop();
+        }
+    }
+
+    void Run()
+    {
+        anim.SetBool("run", true);
+    }
+
+    public void WalkSound()
+    {
+         audiosource.Play();
+    }
+    void Stop()
+    {
+        anim.SetBool("run", false);
+        rb.velocity = Vector3.zero;
     }
 
     void Move(Vector3 dir)
     {
-        transform.Translate(dir.normalized * Time.deltaTime * moveSpeed, Space.World);
-        //transform.LookAt(Camera.main.transform.position, Vector3.up);
+        Run();
+        rb.velocity = dir.normalized * Time.deltaTime * moveSpeed;
+        //if (rb.velocity.normalized != dir.normalized)
+        //{
+        //    rb.velocity = Vector3.Cross(rb.velocity.normalized , dir.normalized) * Time.deltaTime * moveSpeed;
+        //}
+            
+        //transform.Translate(dir.normalized * Time.deltaTime * moveSpeed, Space.World);        
     }
 
 

@@ -13,7 +13,7 @@ public class LevelManager : MonoBehaviour
 
     List<GameObject> hidingPlaces;
     List<GameObject> usedHidingPlaces;
-
+    public List<GameObject> animals;
     Timer timer;
 
     PlayerController playerController;
@@ -23,12 +23,18 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 1f;
         hidingPlaces = new List<GameObject>();
         usedHidingPlaces = new List<GameObject>();
+        animals = new List<GameObject>();
         HidingPlace[] arr = GameObject.FindObjectsOfType<HidingPlace>();
         for (int i = 0; i < arr.Length; i++)
         {
             hidingPlaces.Add(arr[i].gameObject);
         }
 
+        AnimalAI[] animalArr = FindObjectsOfType<AnimalAI>();
+        for (int i = 0; i < animalArr.Length; i++)
+        {
+            animals.Add(animalArr[i].gameObject);
+        }
         endGameInfo = GameObject.Find("End_Game_Info").gameObject;
         endGameInfo.SetActive(false);
         playerController = FindObjectOfType<PlayerController>();
@@ -50,6 +56,11 @@ public class LevelManager : MonoBehaviour
 
     public GameObject GetHidingPlace()
     {
+        if (hidingPlaces.Count == 0)
+        {
+            hidingPlaces = usedHidingPlaces;
+            usedHidingPlaces = new List<GameObject>();
+        }
         int rand = Random.Range(0, hidingPlaces.Count - 1);//returns a random hiding place in the list
         GameObject reference = hidingPlaces[rand];
         usedHidingPlaces.Add(reference);
@@ -91,6 +102,7 @@ public class LevelManager : MonoBehaviour
     {
         ToggleEndGameInfo(true);
         Time.timeScale = 0;
+        playerController.score += timer.remainingTime * 100;
         if (playerController.score > GameManager.instance.GetScore())
             GameManager.instance.SetScore(playerController.score);
         UpdateEndLevelScores($"Score: {playerController.score}\n" + $"High Score: {GameManager.instance.GetScore()}");

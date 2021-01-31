@@ -9,6 +9,10 @@ public class HidingPlace : MonoBehaviour
     {
         if (other.tag == "Animal")
         {
+            if (other.name.Equals("Lucy"))
+            {
+                Debug.Log("Its lucy");
+            }
             AnimalAI ai = other.gameObject.GetComponent<AnimalAI>();
             ai.setHiden(true);
         }

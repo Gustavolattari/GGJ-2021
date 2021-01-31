@@ -31,8 +31,12 @@ public class InputManager : MonoBehaviour
         if(playerController.animalCount > 0)
         {
             int random = Random.Range(0, playerController.animalCount - 1);
+            levelManager.animals.Remove(playerController.animals[random]);
             playerController.RemoveAnimal(random);
             levelManager.UpdateScore($"Score: {playerController.score}");
+            if (levelManager.animals.Count == 0)
+                levelManager.GameOver();
+
         }
     }
 }
