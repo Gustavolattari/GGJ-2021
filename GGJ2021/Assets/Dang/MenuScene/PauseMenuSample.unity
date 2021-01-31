@@ -2196,8 +2196,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: These creature will run and hide, try to catch them using the space bar
-    before the timer run out.
+  m_Text: Gary's rescue animals escaped into the forest! He needs to get them back
+    to the shelter! Use the space bar to rescue!
 --- !u!222 &737690030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2968,6 +2968,7 @@ MonoBehaviour:
   PaperFlip: {fileID: 2132340818}
   EndScreen: {fileID: 986129944}
   PauseNow: 0
+  ButtonGroup: []
 --- !u!224 &958806002
 RectTransform:
   m_ObjectHideFlags: 0

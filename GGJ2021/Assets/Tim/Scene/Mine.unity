@@ -3890,7 +3890,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108656700}
   m_LocalRotation: {x: 0.0028990903, y: 0.003941727, z: -0.7029214, w: -0.7112508}
-  m_LocalPosition: {x: 0, y: 0, z: 0.01843}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.19159709, y: 0.17907734, z: 0.19251354}
   m_Children: []
   m_Father: {fileID: 140625977}
@@ -3898,7 +3898,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0.081, y: -0.555, z: -270.675}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -24.05374, y: 0.08445}
+  m_AnchoredPosition: {x: -24.1, y: -5.4}
   m_SizeDelta: {x: 593.2582, y: 200.42636}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &108656702
@@ -3934,8 +3934,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: These creature will run and hide, try to catch them using the space bar
-    before the timer run out.
+  m_Text: Gary's rescue animals escaped into the forest! He needs to get them back
+    to the shelter! Use the space bar to rescue!
 --- !u!222 &108656703
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7093,8 +7093,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 21.689, y: 0}
-  m_SizeDelta: {x: 84.664, y: 15}
+  m_AnchoredPosition: {x: -34.11871, y: 0}
+  m_SizeDelta: {x: 100.3695, y: 15}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &187201582
 MonoBehaviour:
@@ -13065,7 +13065,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Creature catcher
+  m_Text: Gary the Rescuer
 --- !u!222 &387440265
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19590,8 +19590,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 51.1, y: -0.4}
-  m_SizeDelta: {x: 291.78, y: 58.641}
+  m_AnchoredPosition: {x: 64.904, y: 1.8079}
+  m_SizeDelta: {x: 597.23, y: 41.378}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &687748199
 MonoBehaviour:
@@ -19615,12 +19615,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4506bf6ca285b494ab0993e12703d5e6, type: 3}
-    m_FontSize: 34
+    m_FontSize: 44
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 4
     m_MaxSize: 44
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
@@ -45251,7 +45251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32.9, y: 0}
+  m_AnchoredPosition: {x: -42, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1605079515
@@ -50411,7 +50411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1812214496
 Animator:
   serializedVersion: 3

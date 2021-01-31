@@ -41,6 +41,7 @@ public class DN_InGameUI : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            
             Freeze();
         }
       
@@ -107,19 +108,25 @@ public class DN_InGameUI : MonoBehaviour
     }
     public void Freeze()
     {
-        for (int i = 0; i < ButtonGroup.Length; i++)
+        if (PauseNow == false)
         {
-            ButtonGroup[i].SetActive(true);
+            for (int i = 0; i < ButtonGroup.Length; i++)
+            {
+                ButtonGroup[i].SetActive(true);
+            }
+            HTPAnimator.SetBool("Out", false);
+            StartAnimator.SetBool("Out", false);
+            CreditAnimator.SetBool("Out", false);
+            QuitAnimator.SetBool("Out", false);
+            blur.SetActive(true);
+            Time.timeScale = 0;
+            PauseNow = true;
         }
-        HTPAnimator.SetBool("Out", false);
-        StartAnimator.SetBool("Out", false);
-        CreditAnimator.SetBool("Out", false);
-        QuitAnimator.SetBool("Out", false);
-        blur.SetActive(true);
-        Time.timeScale = 0;
     }
     public void Resume()
     {
+        PauseNow = false;
+        PaperFlipSound.Play();
         for (int i = 0; i < ButtonGroup.Length; i++)
         {
             ButtonGroup[i].SetActive(false);
@@ -134,6 +141,10 @@ public class DN_InGameUI : MonoBehaviour
 
     public void Endgame()
     {
+        for (int i = 0; i < ButtonGroup.Length; i++)
+        {
+            ButtonGroup[i].SetActive(true);
+        }
         StartUI.SetActive(false);
         EndScreen.SetActive(true);
         HTPAnimator.SetBool("Out", false);
