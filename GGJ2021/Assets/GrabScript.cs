@@ -37,7 +37,13 @@ public class GrabScript : MonoBehaviour
     void Update()
     {
         if (controller.animalCount > 0)
+        {
+            if (bubble.activeSelf == false)
+            {
+                controller.BubbleSound();
+            }
             bubble.SetActive(true);
+        }
         else
             bubble.SetActive(false);
     }

@@ -14,6 +14,11 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public int animalCount { get { return animals.Count; } }
 
+    [SerializeField]
+    private AudioClip grabSound;
+    [SerializeField]
+    private AudioClip bubbleSound;
+
     private Animator anim;
     private AudioSource audiosource;
     Rigidbody rb;
@@ -109,6 +114,16 @@ public class PlayerController : MonoBehaviour
             // Add score from animal script here
             score += 10;
         }
+    }
+
+    public void GrabSound()
+    {
+        audiosource.PlayOneShot(grabSound);
+    }
+
+    public void BubbleSound()
+    {
+        audiosource.PlayOneShot(bubbleSound);
     }
 
     public int UpdateScore()
