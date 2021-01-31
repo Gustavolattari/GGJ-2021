@@ -19,6 +19,7 @@ public class DN_InGameUI : MonoBehaviour
     private AudioSource PaperFlipSound;
     public GameObject EndScreen;
     public bool PauseNow;
+    public GameObject[] ButtonGroup;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,10 +43,7 @@ public class DN_InGameUI : MonoBehaviour
         {
             Freeze();
         }
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            Endgame();
-        }
+      
     }
     public void StartHover()
     {
