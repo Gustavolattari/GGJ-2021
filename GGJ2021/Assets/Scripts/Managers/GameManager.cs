@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         if (time == null)
             Debug.LogError("The Game_Manager did not find the Timer!");
 
-        levelManager = GameObject.Find("Level Manager").GetComponent<LevelManager>();
+        levelManager = FindObjectOfType<LevelManager>();
         if (levelManager == null)
             Debug.LogError("The Game_Manager did not find the Level Manager!");
 
@@ -52,17 +52,28 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Restart");
         Scene scene = SceneManager.GetActiveScene();
-        levelManager = null;
+        //levelManager = null;
         SceneManager.LoadScene(scene.name);
-        levelManager = GameObject.Find("Level Manager").GetComponent<LevelManager>();
+        // = GameObject.Find("Level Manager").GetComponent<LevelManager>();
         time.StartTimer();
     }
 
     public void GameOver()
     {
-        levelManager.ToggleEndGameInfo();
+        levelManager = FindObjectOfType<LevelManager>();
+        levelManager.ToggleEndGameInfo(true);   
         if (playerController.score > highScore)
             highScore = playerController.score;
         levelManager.UpdateEndLevelScores($"Score: {playerController.score}\n"  + $"High Score: {highScore}");
+    }
+
+    public int GetScore()
+    {
+        return highScore;
+    }
+
+    public void SetScore(int score)
+    {
+        highScore = score;
     }
 }

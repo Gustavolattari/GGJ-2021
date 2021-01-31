@@ -48,7 +48,7 @@ public class Timer : MonoBehaviour
             remainingTime--;
             if (remainingTime <= 0)
             {
-                GameManager.instance.GameOver();
+                levelManager.GameOver();
                 StopTimer();
             }
             levelManager.UpdateTime($"Time: {ConvertTime(remainingTime)}");

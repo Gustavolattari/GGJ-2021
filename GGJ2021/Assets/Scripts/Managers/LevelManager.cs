@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -13,8 +14,13 @@ public class LevelManager : MonoBehaviour
     List<GameObject> hidingPlaces;
     List<GameObject> usedHidingPlaces;
 
+    Timer timer;
+
+    PlayerController playerController;
+
     private void Awake()
     {
+        Time.timeScale = 1f;
         hidingPlaces = new List<GameObject>();
         usedHidingPlaces = new List<GameObject>();
         HidingPlace[] arr = GameObject.FindObjectsOfType<HidingPlace>();
@@ -24,15 +30,22 @@ public class LevelManager : MonoBehaviour
         }
 
         endGameInfo = GameObject.Find("End_Game_Info").gameObject;
+        endGameInfo.SetActive(false);
+        playerController = FindObjectOfType<PlayerController>();
     }
     // Start is called before the first frame update
     void Start()
     {
-        scoreText.text = "Score: 0"; 
-        
-        
+        scoreText.text = "Score: 0";
+
+        timer = FindObjectOfType<Timer>();
         endGameInfo.SetActive(false);
         Debug.Log(endGameInfo);
+    }
+
+    private void Update()
+    {
+        
     }
 
     public GameObject GetHidingPlace()
@@ -59,8 +72,32 @@ public class LevelManager : MonoBehaviour
         endScoreText.text = text;
     }
 
-    public void ToggleEndGameInfo()
+    public void ToggleEndGameInfo(bool active)
     {
-        endGameInfo.SetActive(!endGameInfo.activeSelf);
+        endGameInfo.SetActive(active);
+    }
+
+    public void RestartScene()
+    {
+        Debug.Log("Restart");
+        Scene scene = SceneManager.GetActiveScene();
+        //levelManager = null;
+        SceneManager.LoadScene(scene.name);
+        // = GameObject.Find("Level Manager").GetComponent<LevelManager>();
+        timer.StartTimer();
+    }
+
+    public void GameOver()
+    {
+        ToggleEndGameInfo(true);
+        Time.timeScale = 0;
+        if (playerController.score > GameManager.instance.GetScore())
+            GameManager.instance.SetScore(playerController.score);
+        UpdateEndLevelScores($"Score: {playerController.score}\n" + $"High Score: {GameManager.instance.GetScore()}");
+    }
+
+    public void ChangeLevel(int level)
+    {
+        SceneManager.LoadScene(level);
     }
 }
