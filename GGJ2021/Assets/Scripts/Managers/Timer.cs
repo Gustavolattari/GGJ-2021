@@ -7,8 +7,7 @@ public class Timer : MonoBehaviour
     [HideInInspector]
     public int remainingTime;
 
-    [SerializeField]
-    private int totalTime;
+    public int totalTime;
 
     LevelManager levelManager;
 
