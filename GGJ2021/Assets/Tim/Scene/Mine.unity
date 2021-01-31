@@ -47516,10 +47516,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1954643322}
     m_Modifications:
-    - target: {fileID: 565304827257831873, guid: 5e1ba9dd8aca17646b8c2acaf78c50b8, type: 3}
-      propertyPath: moveSpeed
-      value: 45
-      objectReference: {fileID: 0}
     - target: {fileID: 565304827257831875, guid: 5e1ba9dd8aca17646b8c2acaf78c50b8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -47582,10 +47578,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1954643322}
     m_Modifications:
-    - target: {fileID: 1203220413712325465, guid: 98148c178ab72234f9b14b0fddc4dcc1, type: 3}
-      propertyPath: moveSpeed
-      value: 45
-      objectReference: {fileID: 0}
     - target: {fileID: 1203220413712325467, guid: 98148c178ab72234f9b14b0fddc4dcc1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -47687,10 +47679,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2327852949924419403, guid: 9872206c09fbac341b382340eac80613, type: 3}
-      propertyPath: moveSpeed
-      value: 45
-      objectReference: {fileID: 0}
     - target: {fileID: 2327852949924419406, guid: 9872206c09fbac341b382340eac80613, type: 3}
       propertyPath: m_Name
       value: Cat
@@ -47752,10 +47740,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3013919629975270390, guid: 81e4058bef386764cb0dbb6759d31fd9, type: 3}
-      propertyPath: moveSpeed
-      value: 45
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81e4058bef386764cb0dbb6759d31fd9, type: 3}
 --- !u!1001 &6505293846117453835
@@ -47808,10 +47792,6 @@ PrefabInstance:
     - target: {fileID: 6505293844712006593, guid: 153a17cb03fac734287e77da87bc584a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6505293844712006595, guid: 153a17cb03fac734287e77da87bc584a, type: 3}
-      propertyPath: moveSpeed
-      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6505293844712006606, guid: 153a17cb03fac734287e77da87bc584a, type: 3}
       propertyPath: m_Name

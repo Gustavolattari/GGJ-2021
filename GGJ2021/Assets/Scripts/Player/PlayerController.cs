@@ -92,13 +92,7 @@ public class PlayerController : MonoBehaviour
     void Move(Vector3 dir)
     {
         Run();
-        rb.velocity = dir.normalized * Time.deltaTime * moveSpeed;
-        //if (rb.velocity.normalized != dir.normalized)
-        //{
-        //    rb.velocity = Vector3.Cross(rb.velocity.normalized , dir.normalized) * Time.deltaTime * moveSpeed;
-        //}
-            
-        //transform.Translate(dir.normalized * Time.deltaTime * moveSpeed, Space.World);        
+        rb.velocity = dir.normalized * Time.deltaTime * moveSpeed;   
     }
 
 
