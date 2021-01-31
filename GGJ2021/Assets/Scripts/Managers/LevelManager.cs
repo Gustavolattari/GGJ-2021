@@ -10,7 +10,9 @@ public class LevelManager : MonoBehaviour
     private Text scoreText, timeText, endScoreText;
     [SerializeField]
     private GameObject endGameInfo;
-
+    public bool EndOnce;
+    public GameObject DangUI;
+    private DN_InGameUI DangUIScript;
     List<GameObject> hidingPlaces;
     List<GameObject> usedHidingPlaces;
     public List<GameObject> animals;
@@ -42,8 +44,9 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         scoreText.text = "Score: 0";
-
+        DangUIScript = DangUI.GetComponent<DN_InGameUI>();
         timer = FindObjectOfType<Timer>();
         endGameInfo.SetActive(false);
         Debug.Log(endGameInfo);
@@ -100,6 +103,12 @@ public class LevelManager : MonoBehaviour
 
     public void GameOver()
     {
+        if (EndOnce == false)
+        {
+            DangUIScript.Endgame();
+            EndOnce = true;
+        }
+        
         ToggleEndGameInfo(true);
         Time.timeScale = 0;
         playerController.score += timer.remainingTime * 100;
